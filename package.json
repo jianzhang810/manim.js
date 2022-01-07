@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
+    "dev": "rollup -w -c rollup.config.js",
     "build": "rollup -c rollup.config.js"
   },
   "repository": {
@@ -26,6 +27,6 @@
   },
   "devDependencies": {
     "rollup": "^2.50.4",
-    "typescript": "^4.3.2"
+    "rollup-plugin-serve": "^1.1.0"
   }
 }

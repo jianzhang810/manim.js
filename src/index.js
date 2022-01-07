@@ -1,9 +1,2 @@
-'use strict';
-
-const foo = 'hello world!';
-
-const main = function () {
-    console.log(foo);
-};
-
-module.exports = main;
+export { TextWriteIn } from "./base/text.write.in";
+export { frames, setup2D } from "./base/utils";
