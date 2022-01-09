@@ -1,4 +1,4 @@
-(function (p5) {
+var manim = (function (exports, p5) {
     'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -11,9 +11,9 @@
         return Math.round(frameRate * sec);
     }
 
-    function setup2D(s) {
+    function setup2D(s, width, height) {
         s.frameRate(frameRate);
-        s.createCanvas(1250, 675);
+        s.createCanvas(width, height);
     }
 
     class Timer {
@@ -442,28 +442,42 @@
         }
     }
 
-    // text write in
-    const s = (p) => {
-        let text;
+    let p;
 
-        p.setup = function () {
-            setup2D(p);
-            text = new TextWriteIn(p, {
-                str: "Graph Algorithm: Topological sort",
-                x: 20,
-                y: 20,
-                start: frames(0),
-            });
+    function WriteIn() {
+        if (p) {
+            p.remove();
+        }
+
+        // text write in
+        const s = (p) => {
+            let text;
+
+            p.setup = function () {
+                setup2D(p, 900, 600);
+                text = new TextWriteIn(p, {
+                    str: "Graph Algorithm: Topological sort",
+                    x: 20,
+                    y: 20,
+                    start: frames(0),
+                });
+            };
+
+            p.draw = function () {
+                p.background(0);
+                text.show();
+                text.reColor([255, 0, 0], 1);
+            };
         };
 
-        p.draw = function () {
-            p.background(0);
-            text.show();
-            text.reColor([255, 0, 0], 1);
-        };
-    };
+        p = new p5__default["default"](s, "WriteInPanel");
+    }
 
-    new p5__default["default"](s);
+    exports.WriteIn = WriteIn;
 
-})(p5);
+    Object.defineProperty(exports, '__esModule', { value: true });
+
+    return exports;
+
+})({}, p5);
 //# sourceMappingURL=manim.js.map

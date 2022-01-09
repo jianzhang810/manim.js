@@ -8,6 +8,16 @@
 </head>
 <body>
     <script type="text/javascript" src="./node_modules/p5/lib/p5.js"></script>
+    <script type="module" src="./node_modules\@fluentui\web-components\dist\web-components.js"></script>
     <script type="text/javascript" src="./dist/manim.js"></script>
+    <fluent-tabs id="myTab" activeId="WriteIn" orientation="vertical" activeIndicator>
+        <fluent-tab id="WriteIn" onClick='manim.WriteIn()' >TextWriteIn</fluent-tab>
+        <fluent-tab-panel id="WriteInPanel"></fluent-tab-panel>
+        <fluent-tab id="TabTwo">Tab two</fluent-tab>
+        <fluent-tab-panel id="TabPanelTwo"> Tab two content. This is for testing. </fluent-tab-panel>
+        <fluent-tab id="TabThree">Tab three</fluent-tab>
+        <fluent-tab-panel id="TabPanelThree"> Tab three content. This is for testing. </fluent-tab-panel>
+        <div>Testing</div>
+      </fluent-tabs>
 </body>
 </html>

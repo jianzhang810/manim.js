@@ -14,7 +14,7 @@ if (dev) {
 }
 
 export default {
-    input: "src/examples.js",
+    input: "./examples/examples.js",
     output: {
         file: "dist/manim.js",
         name: "manim",
